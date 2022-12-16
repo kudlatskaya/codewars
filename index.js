@@ -26,15 +26,35 @@ var humanYearsCatYearsDogYears = function (humanYears) {
 
 // For example: month 2 (February), is part of the first quarter; month 6 (June), is part of the second quarter; and month 11 (November), is part of the fourth quarter.
 
-const quarterOf = (month) => {
-    let arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]];
+// const quarterOf = (month) => {
+//     let arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]];
 
-    for (let i = 0; i < 4; i++) {
-        for (let j = 0; j < 3; j++) {
-            if (month == arr[i][j]) return i + 1;
-        }
+//     for (let i = 0; i < 4; i++) {
+//         for (let j = 0; j < 3; j++) {
+//             if (month == arr[i][j]) return i + 1;
+//         }
 
+//     }
+// }
+const quarterOf = m => Math.ceil(m/3);
+
+console.log(quarterOf(4));
+
+// Complete the solution so that it returns true if the first argument(string) passed in ends with the 2nd argument (also a string).
+
+// Examples:
+
+// solution('abc', 'bc') // returns true
+// solution('abc', 'd') // returns false
+function solution(str, ending){
+    let length = ending.length;
+    console.log("дл" + length);
+    if(length === 0) {
+        return (ending == str.slice(-length));
+    } else {
+        return false;
     }
+
 }
 
-console.log(quarterOf(0));
+console.log(solution('abc', 'bc'));
