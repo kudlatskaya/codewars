@@ -62,21 +62,20 @@ function solution(str, ending) {
 // if(number is четное) number = number / 2
 // if(number is нечетное) number = 3*number + 1
 
-var hotpo = function (n) {
+var hotpo = function(n){
     let arr = [];
-    let numb;
-    if (n == 0 || n == 1) return 0; //Optional Handler to n = 0
     let i = 0;
-    arr[i] = numb;
-    while (numb != 1) {
+  
+    if (n == 0 || n == 1) return 0; //Optional Handler to n = 0
+ 
+    arr[i] = n;
+    while (arr[i] != 1) {
         i++;
         arr[i] = (!(arr[i-1] % 2)) ? (arr[i-1] / 2) : (3 * arr[i-1] + 1);
-
     }
 
-    return arr;
+    return arr.length-1;
 }
-console.log(hotpo(5));
 
 // Test.assertEquals(hotpo(1), 0);
 // Test.assertEquals(hotpo(5), 5);
