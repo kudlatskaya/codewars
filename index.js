@@ -77,7 +77,28 @@ var hotpo = function(n){
     return arr.length-1;
 }
 
-// Test.assertEquals(hotpo(1), 0);
-// Test.assertEquals(hotpo(5), 5);
-// Test.assertEquals(hotpo(6), 8);
-// Test.assertEquals(hotpo(23), 15);
+// In this kata you will create a function that takes a list of non-negative integers and strings and returns a new list with the strings filtered out.
+function filter_list(l) {
+    // Return a new array with the strings filtered out
+    let arr = [];
+    arr = l.filter(item => Number.isInteger(item));
+    return arr;
+  }
+
+
+//   Given two integers a and b, which can be positive or negative, find the sum of all the integers between and including them and return it. If the two numbers are equal return a or b.
+
+// Note: a and b are not ordered!
+  function getSum( a,b )
+{
+  let i = (a > b) ? b : a;
+  let lenght = (a > b) ? a : b;
+  let sum = 0;
+  
+   while(i <= lenght) {
+     sum = sum + i;
+     i++;
+   }
+  
+  return sum;
+}
