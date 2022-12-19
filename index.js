@@ -62,19 +62,19 @@ function solution(str, ending) {
 // if(number is четное) number = number / 2
 // if(number is нечетное) number = 3*number + 1
 
-var hotpo = function(n){
+var hotpo = function (n) {
     let arr = [];
     let i = 0;
-  
+
     if (n == 0 || n == 1) return 0; //Optional Handler to n = 0
- 
+
     arr[i] = n;
     while (arr[i] != 1) {
         i++;
-        arr[i] = (!(arr[i-1] % 2)) ? (arr[i-1] / 2) : (3 * arr[i-1] + 1);
+        arr[i] = (!(arr[i - 1] % 2)) ? (arr[i - 1] / 2) : (3 * arr[i - 1] + 1);
     }
 
-    return arr.length-1;
+    return arr.length - 1;
 }
 
 // In this kata you will create a function that takes a list of non-negative integers and strings and returns a new list with the strings filtered out.
@@ -83,22 +83,37 @@ function filter_list(l) {
     let arr = [];
     arr = l.filter(item => Number.isInteger(item));
     return arr;
-  }
+}
 
 
 //   Given two integers a and b, which can be positive or negative, find the sum of all the integers between and including them and return it. If the two numbers are equal return a or b.
 
 // Note: a and b are not ordered!
-  function getSum( a,b )
-{
-  let i = (a > b) ? b : a;
-  let lenght = (a > b) ? a : b;
-  let sum = 0;
-  
-   while(i <= lenght) {
-     sum = sum + i;
-     i++;
-   }
-  
-  return sum;
+function getSum(a, b) {
+    let i = (a > b) ? b : a;
+    let lenght = (a > b) ? a : b;
+    let sum = 0;
+
+    while (i <= lenght) {
+        sum = sum + i;
+        i++;
+    }
+
+    return sum;
 }
+
+
+// In a small town the population is p0 = 1000 at the beginning of a year. The population regularly increases by 2 percent per year and moreover 50 new inhabitants per year come to live in the town. How many years does the town need to see its population greater or equal to p = 1200 inhabitants?
+
+function nbYear(p0, percent, aug, p) {
+    let n = 0;
+
+    while (p0 < p) {
+        
+      p0 = Math.floor(p0 + p0 / 100 * percent + aug);
+      n++;
+    }
+
+    return n;
+}
+
