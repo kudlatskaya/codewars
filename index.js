@@ -36,9 +36,9 @@ var humanYearsCatYearsDogYears = function (humanYears) {
 
 //     }
 // }
-const quarterOf = m => Math.ceil(m/3);
+const quarterOf = m => Math.ceil(m / 3);
 
-console.log(quarterOf(4));
+//console.log(quarterOf(4));
 
 // Complete the solution so that it returns true if the first argument(string) passed in ends with the 2nd argument (also a string).
 
@@ -46,10 +46,10 @@ console.log(quarterOf(4));
 
 // solution('abc', 'bc') // returns true
 // solution('abc', 'd') // returns false
-function solution(str, ending){
+function solution(str, ending) {
     let length = ending.length;
     console.log("дл" + length);
-    if(length === 0) {
+    if (length === 0) {
         return (ending == str.slice(-length));
     } else {
         return false;
@@ -57,4 +57,28 @@ function solution(str, ending){
 
 }
 
-console.log(solution('abc', 'bc'));
+//Гипотеза Коллатца
+//console.log(solution('abc', 'bc'));
+// if(number is четное) number = number / 2
+// if(number is нечетное) number = 3*number + 1
+
+var hotpo = function (n) {
+    let arr = [];
+    let numb;
+    if (n == 0 || n == 1) return 0; //Optional Handler to n = 0
+    let i = 0;
+    arr[i] = numb;
+    while (numb != 1) {
+        i++;
+        arr[i] = (!(arr[i-1] % 2)) ? (arr[i-1] / 2) : (3 * arr[i-1] + 1);
+
+    }
+
+    return arr;
+}
+console.log(hotpo(5));
+
+// Test.assertEquals(hotpo(1), 0);
+// Test.assertEquals(hotpo(5), 5);
+// Test.assertEquals(hotpo(6), 8);
+// Test.assertEquals(hotpo(23), 15);
