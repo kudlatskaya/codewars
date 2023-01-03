@@ -157,3 +157,8 @@ function past(h, m, s){
   }
 
   console.log(findOutlier([1, 2, 3]));
+
+  function sumTwoSmallestNumbers(numbers) {  
+    numbers.sort((a, b) => a - b);
+    return numbers[0] + numbers[1];
+  }
