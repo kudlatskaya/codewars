@@ -117,3 +117,13 @@ function nbYear(p0, percent, aug, p) {
     return n;
 }
 
+function past(h, m, s){
+    return s * 1000 + m * 60 * 1000 + h * 60 * 60 * 1000;
+  }
+
+  function disemvowel(str) {
+    //«A», «E», «I», «O», «U»
+    str = str.replace(/[aeiou]/gi, '');
+    return str;
+  }
+
