@@ -139,8 +139,8 @@ function past(h, m, s){
         odd++;
        }
      }
-     console.log(odd);
-     console.log(even);
+    //  console.log(odd);
+    //  console.log(even);
 
     
       if(odd == integers.length - 1) {
@@ -156,9 +156,21 @@ function past(h, m, s){
       }
   }
 
-  console.log(findOutlier([1, 2, 3]));
+ // console.log(findOutlier([1, 2, 3]));
 
   function sumTwoSmallestNumbers(numbers) {  
     numbers.sort((a, b) => a - b);
     return numbers[0] + numbers[1];
   }
+
+
+  function validatePIN (pin) {
+    console.log(pin.length);
+    console.log(Number.isInteger(+pin));
+
+    if((pin.length == 4 || pin.length == 6) && /^[0-9]+$/.test(pin)) return true;
+    
+    return false;
+  }
+
+  console.log(validatePIN('12.0'));
