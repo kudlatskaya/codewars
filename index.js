@@ -127,3 +127,33 @@ function past(h, m, s){
     return str;
   }
 
+  function findOutlier(integers){
+    let odd = 0; //неч
+    let even = 0; //чет
+    
+     for(let i = 0; i < integers.length; i++) {
+       if(integers[i]%2 == 0) { 
+        even++;
+         
+       } else {
+        odd++;
+       }
+     }
+     console.log(odd);
+     console.log(even);
+
+    
+      if(odd == integers.length - 1) {
+        for(let i = 0; i < integers.length; i++) {
+          if (integers[i]%2 == 0) return integers[i]; 
+        }
+      }
+      
+    if(even == integers.length - 1) {
+        for(let i = 0; i < integers.length; i++) {
+          if (integers[i]%2 != 0) return integers[i]; 
+        }
+      }
+  }
+
+  console.log(findOutlier([1, 2, 3]));
