@@ -173,4 +173,19 @@ function past(h, m, s){
     return false;
   }
 
-  console.log(validatePIN('12.0'));
+  //console.log(validatePIN('12.0'));
+
+  function spinWords(string){
+    let arr = string.split(' ');
+    
+    for(let i = 0; i < arr.length; i++) {
+      if(arr[i].length >= 5) { 
+        arr[i] = [...arr[i]].reverse().join(''); 
+      }
+    }
+    
+    return arr.join(' ');
+    
+  }
+  
+  console.log(spinWords('Welcome'));
