@@ -241,4 +241,53 @@ function past(h, m, s){
      return array.map(item => item * (-1)); 
   }
 
-  console.log(invert([ 1, 2, 3, 4, 5 ]));
+
+  var uniqueInOrder=function(iterable){
+    [...iterable] = iterable; 
+    let arr = [];
+    let i = 0, j = 0;
+    if(iterable.length != 0) {
+       arr[j] = iterable[i]; 
+    j++;
+    }
+   
+
+   for(i = 1; i < iterable.length; i++){
+
+      if(iterable[i] != iterable[i - 1]) {
+        arr[j] = iterable[i];
+        j++;
+      }  
+    }
+
+    return arr;
+  }
+  //uniqueInOrder([ 'A', 'B', 'C', 'c','c', 'A', 'D' ]);
+  //console.log(uniqueInOrder([]));
+  // let sum = new Function('a', 'b', 'return a + b');
+
+  function gooseFilter (birds) {
+    var geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
+    let arr = [];
+    let k = 0;
+    let coincidence;
+    
+    for(let i = 0; i < birds.length; i++) {
+      coincidence = true;
+      
+      for(let j = 0; j < geese.length; j++) {
+       if(geese[j] == birds[i]) {
+        coincidence = false;
+        break;
+       }
+      } 
+      if(coincidence) {
+        arr[k] = birds[i];
+        k++;
+    }
+  }
+      
+      return arr;
+  }
+
+  console.log(gooseFilter([ 'Blue Swedish', 'Roman Tufted', 'Crested', 'Hook Bill', 'Barbary', 'Pilgrim', 'Barbary', 'Mallard', 'Crested', 'Barbary', 'African' ]));
