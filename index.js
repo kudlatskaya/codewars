@@ -274,7 +274,7 @@ function past(h, m, s){
     
     for(let i = 0; i < birds.length; i++) {
       coincidence = true;
-      
+
       for(let j = 0; j < geese.length; j++) {
        if(geese[j] == birds[i]) {
         coincidence = false;
@@ -290,4 +290,15 @@ function past(h, m, s){
       return arr;
   }
 
-  console.log(gooseFilter([ 'Blue Swedish', 'Roman Tufted', 'Crested', 'Hook Bill', 'Barbary', 'Pilgrim', 'Barbary', 'Mallard', 'Crested', 'Barbary', 'African' ]));
+  // console.log(gooseFilter([ 'Blue Swedish', 'Roman Tufted', 'Crested', 'Hook Bill', 'Barbary', 'Pilgrim', 'Barbary', 'Mallard', 'Crested', 'Barbary', 'African' ]));
+
+  function powersOfTwo(n){
+    let arr = [];
+
+    for(let i = 0; i <= n; i++) {
+      arr[i] = Math.pow(2, i);
+    }
+    return arr;
+  }
+
+  console.log(powersOfTwo(0));
