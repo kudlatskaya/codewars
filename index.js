@@ -187,5 +187,58 @@ function past(h, m, s){
     return arr.join(' ');
     
   }
+
+  // Write a function that takes a string of braces, and determines if the order of the braces is valid. It should return true if the string is valid, and false if it's invalid.
+
+  // This Kata is similar to the Valid Parentheses Kata, but introduces new characters: brackets [], and curly braces {}. Thanks to @arnedag for the idea!
   
-  console.log(spinWords('Welcome'));
+  // All input strings will be nonempty, and will only consist of parentheses, brackets and curly braces: ()[]{}.
+  
+  // What is considered Valid?
+  // A string of braces is considered valid if all braces are matched with the correct brace.
+  
+  // Examples
+  // "(){}[]"   =>  True
+  // "([{}])"   =>  True
+  // "(}"       =>  False
+  // "[(])"     =>  False
+  // "[({})](]" =>  False
+
+  function validBraces(braces){
+    [...braces] = braces;
+    
+    for(let i = 0; i < braces.length; i++) { 
+      if(braces[i] == '(') braces[i] = 1;
+      if(braces[i] == '[') braces[i] = 2;
+      if(braces[i] == '{') braces[i] = 3;
+      if(braces[i] == ')') braces[i] = -1;
+      if(braces[i] == ']') braces[i] = -2;
+      if(braces[i] == '}') braces[i] = -3;
+
+    }
+    
+    if (braces.length % 2 == 0) { 
+      for(let i = 0; i < braces.length/2; i++) { //console.log(braces[braces.length - i -1]);
+        if (Math.abs(braces[i]) != Math.abs(braces[braces.length - i -1])) {
+          return false;
+        }
+        else if(!(braces[i] > 0 && braces[braces.length - i -1] < 0)) {
+          return false;
+        } 
+      }
+
+      return true;
+    }
+    
+    return false;
+  }
+  //validBraces('()');
+  //console.log(validBraces('(){}[]'));
+
+  function invert(array) {
+    
+    
+     return array.map(item => item * (-1)); 
+  }
+
+  console.log(invert([ 1, 2, 3, 4, 5 ]));
