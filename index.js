@@ -301,4 +301,19 @@ function past(h, m, s){
     return arr;
   }
 
-  console.log(powersOfTwo(0));
+  //console.log(powersOfTwo(0));
+
+  function aliasGen(name, lastName){
+     var firstName = {A: 'Alpha', B: 'Beta', C: 'Cache' };
+     var surname = {A: 'Analogue', B: 'Bomb', C: 'Catalyst' };
+    let nameLater = name[0].toUpperCase(); console.log(nameLater);
+    let surnameLater = lastName[0].toUpperCase(); console.log(surnameLater);
+    if((nameLater.charCodeAt() < 65 || nameLater.charCodeAt() > 90) ||
+    (surnameLater.charCodeAt() < 65 || surnameLater.charCodeAt() > 90)) {
+    return 'Your name must start with a letter from A - Z.';
+  }
+  
+    return firstName[nameLater] + ' ' + surname[surnameLater];
+}
+
+console.log(aliasGen("Bike", "Aillington"));
