@@ -316,4 +316,15 @@ function past(h, m, s){
     return firstName[nameLater] + ' ' + surname[surnameLater];
 }
 
-console.log(aliasGen("Bike", "Aillington"));
+// "apple ban" --> ["apple 5", "ban 3"]
+// "you will win" -->["you 3", "will 4", "win 3"]
+function addLength(str) {
+  let arr = str.split(' ');
+   let new_array = arr.map((item) => { 
+    return item + ' ' + item.length; 
+   })
+
+   return new_array;
+ }
+
+console.log(addLength("Bike Aillington"));
