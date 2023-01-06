@@ -327,4 +327,10 @@ function addLength(str) {
    return new_array;
  }
 
-console.log(addLength("Bike Aillington"));
+ function litres(time) {
+  let liters = time*0.5;
+  
+  return Math.floor(liters);
+}
+
+//console.log(addLength("Bike Aillington"));
