@@ -348,4 +348,8 @@ function reverseWords(str){
 function grow(x){
   return x.reduce((mult, item) => mult * item, 1);
 }
+
+function multiply(a, b){
+  return a * b
+}
 console.log(grow([1, 2, 3, 4]));
