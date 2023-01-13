@@ -339,4 +339,8 @@ function repeatStr(n, s) {
   return s.padEnd(length, s);
 }
 
-console.log(repeatStr(10, '*'));
+function reverseWords(str){
+  let arr = str.split(' ');
+  return arr.reverse().join(' ');
+}
+console.log(reverseWords('hello world!'));
