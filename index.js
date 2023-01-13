@@ -358,4 +358,8 @@ function shortcut(string) {
   return string.replace(/[aeiou]/gi, '');
 }
 
+function opposite(number) {
+  return number*(-1);
+}
+
 console.log(shortcut('how are you today?'));
