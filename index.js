@@ -343,4 +343,9 @@ function reverseWords(str){
   let arr = str.split(' ');
   return arr.reverse().join(' ');
 }
-console.log(reverseWords('hello world!'));
+
+//[1, 2, 3, 4] => 1 * 2 * 3 * 4 = 24
+function grow(x){
+  return x.reduce((mult, item) => mult * item, 1);
+}
+console.log(grow([1, 2, 3, 4]));
