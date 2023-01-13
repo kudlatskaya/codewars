@@ -352,4 +352,10 @@ function grow(x){
 function multiply(a, b){
   return a * b
 }
-console.log(grow([1, 2, 3, 4]));
+
+//a, e, i, o, u 
+function shortcut(string) {
+  return string.replace(/[aeiou]/gi, '');
+}
+
+console.log(shortcut('how are you today?'));
