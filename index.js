@@ -362,4 +362,13 @@ function opposite(number) {
   return number*(-1);
 }
 
-console.log(shortcut('how are you today?'));
+var summation = function (num) {
+  let sum = 0;
+  
+  for(let i = 0; i <= num; i++) {
+    sum += i;
+  }
+  
+  return sum;
+}
+console.log(summation(1));
