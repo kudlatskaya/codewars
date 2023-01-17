@@ -205,6 +205,11 @@ function spinWords(string) {
 // "[({})](]" =>  False
 
 function validBraces(braces) {
+  let sum = 0;
+  let countOne = 0;
+  let countTwo = 0;
+  let countThree = 0;
+
   [...braces] = braces;
 
   for (let i = 0; i < braces.length; i++) {
@@ -214,26 +219,30 @@ function validBraces(braces) {
     if (braces[i] == ')') braces[i] = -1;
     if (braces[i] == ']') braces[i] = -2;
     if (braces[i] == '}') braces[i] = -3;
+  }
+
+  for(let i = 0; i < braces.length; i++) {
+    sum += braces[i];
 
   }
 
-  if (braces.length % 2 == 0) {
-    for (let i = 0; i < braces.length / 2; i++) { //console.log(braces[braces.length - i -1]);
-      if (Math.abs(braces[i]) != Math.abs(braces[braces.length - i - 1])) {
-        return false;
-      }
-      else if (!(braces[i] > 0 && braces[braces.length - i - 1] < 0)) {
-        return false;
-      }
-    }
+      console.log(sum);
 
-    return true;
+  if(sum != 0) return false;
+
+  for(let i = 0; i < braces.length; i++) {
+    if(Math.abs(braces[i]) == 1) countOne++;
+    if(Math.abs(braces[i]) == 2) countTwo++;
+    if(Math.abs(braces[i]) == 3) countThree++;
   }
 
-  return false;
+  if(countOne%2 || countTwo%2 || countThree%2) return false;
+    
+  return true;
+
 }
 //validBraces('()');
-//console.log(validBraces('(){}[]'));
+//console.log(validBraces('[(])'));
 
 function invert(array) {
 
@@ -407,4 +416,28 @@ function rowSumOddNumbers(n) {
 
   return arr[i - 1];
 }
-console.log(rowSumOddNumbers(56));
+
+function alphabet(ns) {
+  //ns.sort( (a, b) => a - b );
+
+  for(let i = 0; i < ns.lenght; i++) {
+    for(let j = 0; j < ns.lenght; j++) {
+      ns[j] % ns[i]
+    }
+  }
+  
+  return ns[3];
+}
+
+var number = function(busStops){
+  let countInBus = busStops[0][0];
+ 
+  for(let i = 1; i < busStops.length; i++){
+    countInBus = countInBus + busStops[i][0] - busStops[i][1];
+
+    
+  }
+  
+  return countInBus;
+  }
+console.log(number([ [ 10, 0 ], [ 3, 5 ], [ 5, 8 ] ]));
