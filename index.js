@@ -375,4 +375,36 @@ var summation = function (num) {
 function evenOrOdd(number) {
   return number%2 ? "Odd" : "Even"
 }
-console.log(summation(1));
+
+function rowSumOddNumbers(n) {
+  // let arr = [];
+  // let j = 0;
+  // let number = 1;
+  // arr[0] = number;
+  
+	// for(let i = 1; i < n; i++) {
+  //   arr[i] = [];
+
+  //   for(j = 0; j <= i; j++) {
+  //     number += 2;
+  //     arr[i][j] = number;
+  //   }
+  // }
+  let arr = [];
+  let number = 1;
+  let sum, i;
+
+  for(i = 0; i < n; i++) {
+    sum = 0;
+
+    for(let j = 0; j <= i; j++) {
+      sum += number;
+      number += 2;
+    }
+
+    arr[i] = sum;
+  }
+
+  return arr[i - 1];
+}
+console.log(rowSumOddNumbers(56));
