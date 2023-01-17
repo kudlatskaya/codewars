@@ -440,4 +440,10 @@ var number = function(busStops){
   
   return countInBus;
   }
-console.log(number([ [ 10, 0 ], [ 3, 5 ], [ 5, 8 ] ]));
+
+  function reverseLetter(str) {
+    str = str.replace(/[^A-Za-z]/g, ""); 
+    return [...str].reverse().join('');
+    
+  }
+console.log(reverseLetter('ultr53o?n'));
