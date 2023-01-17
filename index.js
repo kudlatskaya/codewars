@@ -371,4 +371,8 @@ var summation = function (num) {
   
   return sum;
 }
+
+function evenOrOdd(number) {
+  return number%2 ? "Odd" : "Even"
+}
 console.log(summation(1));
