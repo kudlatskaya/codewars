@@ -446,4 +446,17 @@ var number = function(busStops){
     return [...str].reverse().join('');
     
   }
-console.log(reverseLetter('ultr53o?n'));
+
+  function geo_mean(nums, arith_mean) {
+    let lastIndex = nums.length; 
+    let x = arith_mean * (lastIndex + 1);
+
+    nums.forEach((item) => x -= item);
+    nums[lastIndex] = x;
+    let geometricMean = nums.reduce((mult, current) => mult * current, 1);
+
+    let pow = (1/nums.length).toFixed(16); 
+    return Math.pow(geometricMean, pow);
+
+  }
+console.log(geo_mean([2], 10));
