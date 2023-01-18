@@ -459,4 +459,13 @@ var number = function(busStops){
     return Math.pow(geometricMean, pow);
 
   }
+
+  function min(a, b){
+    if(isNaN(a) || isNaN(a) || typeof a === 'Number' || typeof b === 'Number' || a === undefined || b === undefined) return NaN;
+    if(a === null) a = 0;
+    if(b === null) b = 0;
+    
+    return (a<b)?a:b;
+  }
+  
 console.log(geo_mean([2], 10));
