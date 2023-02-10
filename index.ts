@@ -19,3 +19,19 @@ export function sumCubes(n: number): number {
 
     return sum
 }
+
+export function basicOp(operation: string, value1: number, value2: number): number {
+    // Good luck!
+
+    let result = (operation === '+')
+        ? value1 + value2
+        : (operation === '-')
+            ? value1 - value2
+            : (operation === '*')
+                ? value1 * value2
+                : (operation === '/')
+                    ? value1 / value2
+                    : 0;
+
+    return result;
+}
