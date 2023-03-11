@@ -151,4 +151,19 @@ function keepOrder(ary, val) {
     //return index;
 }
 
-console.log(keepOrder([1, 2, 3, 4, 7], 0))
+function countSheeps(arrayOfSheep) {
+    let sheepCount = 0;
+
+    arrayOfSheep.forEach(sheep => {
+        sheep && sheepCount++
+    })
+
+    return sheepCount;
+}
+
+console.log(countSheeps([true,  true,  true,  false,
+    true,  true,  true,  true ,
+    true,  false, true,  false,
+    true,  false, false, true ,
+    true,  true,  true,  true ,
+    false, false, true,  true ]))
