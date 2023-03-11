@@ -140,4 +140,15 @@ var cubeChecker = function(volume, side){
     return (volume > 0 && side > 0) ? volume/side/side == side : false;
 };
 
-console.log(cubeChecker(56.3, 1))
+function keepOrder(ary, val) {
+    let _array = [...ary, val].sort((a,b) => a - b); console.log(_array)
+    return _array.findIndex(item => item == val)
+    // for(let i = 0; i < ary.length; i++) {
+    //     if(val <= ary[i] ) return i;
+    //     if(i == ary.length-1) return ++i;
+    // }
+
+    //return index;
+}
+
+console.log(keepOrder([1, 2, 3, 4, 7], 0))
