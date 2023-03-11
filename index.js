@@ -133,4 +133,11 @@ function sumNoDuplicates(numList) {
     return numList.reduce( (sum, item) => sum + item, 0 );
 }
 
-console.log(sumNoDuplicates([5, 6, 10, 3, 10, 10, 6, 7, 0, 9, 1, 1, 6, 3, 1]));
+//console.log(sumNoDuplicates([5, 6, 10, 3, 10, 10, 6, 7, 0, 9, 1, 1, 6, 3, 1]));
+
+var cubeChecker = function(volume, side){
+
+    return (volume > 0 && side > 0) ? volume/side/side == side : false;
+};
+
+console.log(cubeChecker(56.3, 1))
