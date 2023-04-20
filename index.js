@@ -167,3 +167,28 @@ console.log(countSheeps([true,  true,  true,  false,
     true,  false, false, true ,
     true,  true,  true,  true ,
     false, false, true,  true ]))
+
+// Write a generic function chainer that takes a starting value, and an array of functions to execute on it (array of symbols for Ruby).
+//
+// The input for each function is the output of the previous function (except the first function, which takes the starting value as its input).
+// Return the final value after execution is complete.
+function add(num) {
+    return num + 1;
+}
+
+function mult(num) {
+    return num * 30;
+}
+//
+// chain(2, [add, mult]);
+// returns 90;
+
+const chain = (initial, [...action]) => {
+
+    for(let i=0; i < action.length; i++) {
+        initial = action[i](initial)
+    }
+    return  initial
+}
+
+console.log('chain:' + chain(2, [add, mult]))
