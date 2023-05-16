@@ -161,12 +161,12 @@ function countSheeps(arrayOfSheep) {
     return sheepCount;
 }
 
-console.log(countSheeps([true,  true,  true,  false,
-    true,  true,  true,  true ,
-    true,  false, true,  false,
-    true,  false, false, true ,
-    true,  true,  true,  true ,
-    false, false, true,  true ]))
+// console.log(countSheeps([true,  true,  true,  false,
+//     true,  true,  true,  true ,
+//     true,  false, true,  false,
+//     true,  false, false, true ,
+//     true,  true,  true,  true ,
+//     false, false, true,  true ]))
 
 // Write a generic function chainer that takes a starting value, and an array of functions to execute on it (array of symbols for Ruby).
 //
@@ -211,4 +211,53 @@ function stray(numbers) {
     return 0;
 }
 
-console.log(stray([17, 17, 26, 17, 17, 17, 17] ))
+// console.log(stray([17, 17, 26, 17, 17, 17, 17] ))
+
+// Реализовать функцию superSum которая принимает число в качестве аргумента, которое указывает на количество слагаемых
+// и что бы корректно работали следующие вызовы:
+//     1) superSum(0) //0
+// 2) superSum(3)(2)(5)(3) //10
+// 3) superSum(3)(2)(5,3) //10
+// 4) superSum(3)(2,5,3) //10
+// 5) superSum(3)(2,5)(3) //10
+// 6) superSum(3)(2,5)(3,9) //10
+
+function doubleInteger(i) {
+    i *= 2;
+    return i;
+}
+/*Write a function getMean that takes as parameters an array (arr) and 2 integers (x and y).
+The function should return the mean between the mean of the the first x elements of the array and the mean of the
+last y elements of the array.
+
+    The mean should be computed if both x and y have values higher than 1 but less or equal to the array's length.
+    Otherwise the function should return -1.
+
+getMean([1,3,2,4], 2, 3) should return 2.5 because: the mean of the the first 2 elements of the array is
+(1+3)/2=2 and the mean of the last 3 elements of the array is (4+2+3)/3=3 so the mean of those 2 means is (2+3)/2=2.5.
+
+getMean([1,3,2,4], 1, 2) should return -1 because x is not higher than 1.
+
+getMean([1,3,2,4], 2, 8) should return -1 because 8 is higher than the array's length.*/
+
+function getMean(arr, x, y) {
+
+    if(x <= 1 || x > arr.length || y <= 0 || y > arr.length) return -1;
+
+    let resultX = arr.reduce((sum, current, i) => {
+        if(i < x )  return sum += current;
+        else return sum;
+    });
+
+    let resultY = arr.reduceRight((sum, current, i, array) => {
+        if(i >= array.length - y) return sum += current;
+        else return sum;
+    });
+
+    let avX = resultX / x;
+    let avY = resultY / y;
+
+    return (avX + avY) / 2;
+}
+let arr = [41, 21, 25, 3, 6, 63, 52, 12, 47, 24, 62, 63, 7, 1, 95, 87, 68, 69, 72, 93, 19, 74, 1, 23, 79, 84, 65, 2, 25, 18, 90, 57, 26, 6, 84, 25, 30, 10, 5, 0, 7, 60, 89, 44, 5, 15, 95, 69, 21, 57, 76, 35, 63, 96, 19, 15]
+console.log(getMean(arr, 37, 56))
